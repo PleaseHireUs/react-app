@@ -2,7 +2,7 @@
   text-align: center;
 }
 .a{
-  color: #2d4499;
+  color: black;
 }
 .table{
   width: 95%;
@@ -14,39 +14,34 @@
 .th{
   padding: 6px 0px;
   width: 20%;
-  border-left: #133d34;
-  border-right: #133d34;
-  border-width: 0px 2px;
+  border-color: black;
+  border-width: 3px;
   border-style: solid;
 }
 .td{
   padding: 7px 8px;
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
   width: 20%;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.td{
-  border-left: #133d34;
-  border-right: #133d34;
-  border-width: 0px 2px;
-  border-style: solid;
-}
 
 .first{
-  border-color: #133d34;
-  border-top-color: #ad6154;
-  border-width: 2px;
-  border-style: solid;
+  background-color: #9dbeb7;
+
 }
 .tr:nth-child(even){  
-  border-color: #133d34;
-  border-width: 2px;
-  border-style: solid;
+  background-color: #9dbeb7;
+  color: black;
+  font-weight: 550;
 }
 .tr:nth-child(odd){
-  border-color: #ad6154;
-  border-width: 2px;
-  border-style: solid;
+  background-color: #ef4e32;
+  color: black;
+  font-weight: 550;
+
 }
 /* .App-logo {
   height: 40vmin;
