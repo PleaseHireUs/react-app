@@ -1,14 +1,29 @@
 import './App.css';
 import { useEffect,useState } from 'react';
 import RowComponent from './RowComponent';
+
+
 function App() {
-  const [data,setData] = useState([{"Email id":123123,"Company":"Bob","Website":"abc.com","Position":"SDE","Timestamp":"123123123"},
-  {"Email id":32123123,"Company":"Basdfjalsdkfjalsdfj","Website":"abasdfjasdjfhc.com/asdfasdfasdf/asdfasdfasdf/asdfasdfasdfdf","Position":"SDE","Timestamp":"12312asdfasdf3123"},
-  {"Email id":32123123,"Company":"Basdfjalsdkfjalsdfj","Website":"abasdfjasdjfhc.com/asdfasdfasdf/asdfasdfasdf/asdfasdfasdfdf","Position":"SDE","Timestamp":"12312asdfasdf3123"}]);
+
+  const [data,setData] = useState([]);
   useEffect(()=>{
-    // apiCall.then(jsonData => setData(jsonData)) 
+    fetch("http://34.125.250.172:5000/jobApps",{
+      method:'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "userId": "123",
+      "emailId": "test@gmail.com",
+      "skip": 0,
+      "limit": 10,
+      "sortfields": {
+      "createdDate": -1
+      }
+      })}).then(jsonData => jsonData.json())
+      .then(data => setData(data))
     document.title = 'Job Tracker';
-  })
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
